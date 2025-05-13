@@ -50,8 +50,7 @@ jobs:
         run: "docker build -t $IMAGE_NAME ."
 
       - name: Run database up migrations
-        working-directory: sql/schema
-        run: "goose turso $DATABASE_URL up"
+        run: "./scripts/migrateup.sh"
 
       - name: Push to Google Artifact Registry
         run: "docker push $IMAGE_NAME"
