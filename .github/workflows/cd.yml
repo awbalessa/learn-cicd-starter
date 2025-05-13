@@ -40,6 +40,9 @@ jobs:
       - name: Use gcloud CLI
         run: "gcloud info"
 
+      - name: Configure default gcloud region
+        run: "gcloud config set run/region us-central1"
+
       - name: Configure Docker with gcloud
         run: "gcloud auth configure-docker us-central1-docker.pkg.dev"
 
